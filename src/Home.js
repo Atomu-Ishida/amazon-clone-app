@@ -4,6 +4,7 @@ import './Home.css';
 import Product from './Product';
 
 const Home = () => {
+  const number = [1, 2];
   return (
     <div className='home'>
       <div className='home__container'>
@@ -14,52 +15,61 @@ const Home = () => {
         />
 
         <div className='home__row'>
-          <Product
-            id={Math.random()}
-            title='The lean startup'
-            price={29.99}
-            image='https://images-na.ssl-images-amazon.com/images/I/51Zymoq7UnL._AC_SY400_.jpg'
-            rating={5}
-          />
-          <Product
+          {number.map((d) => (
+            <Product
+              key={d}
+              id='12413121'
+              title='The lean startup'
+              price={29.99}
+              image='https://images-na.ssl-images-amazon.com/images/I/51Zymoq7UnL._AC_SY400_.jpg'
+              rating={5}
+            />
+          ))}
+
+          {/* <Product
+            key={2}
             id={Math.random()}
             title='The lean startup'
             price={29.99}
             image='https://images-na.ssl-images-amazon.com/images/I/51Zymoq7UnL._AC_SY400_.jpg'
             rating={4}
-          />
+          /> */}
         </div>
         <div className='home__row'>
-          <Product
+          {/* <Product
+            key={3}
             id={Math.random()}
             title='The lean startup'
             price={29.99}
             image='https://images-na.ssl-images-amazon.com/images/I/51Zymoq7UnL._AC_SY400_.jpg'
             rating={5}
-          />
-          <Product
+          /> */}
+          {/* <Product
+            key={4}
             id={Math.random()}
             title='The lean startup'
             price={29.99}
             image='https://images-na.ssl-images-amazon.com/images/I/51Zymoq7UnL._AC_SY400_.jpg'
             rating={5}
-          />
-          <Product
+          /> */}
+          {/* <Product
+            key={5}
             id={Math.random()}
             title='The lean startup'
             price={29.99}
             image='https://images-na.ssl-images-amazon.com/images/I/51Zymoq7UnL._AC_SY400_.jpg'
             rating={5}
-          />
+          /> */}
         </div>
         <div className='home__row'>
-          <Product
+          {/* <Product
+            key={6}
             id={Math.random()}
             title='The lean startup'
             price={29.99}
             image='https://images-na.ssl-images-amazon.com/images/I/51Zymoq7UnL._AC_SY400_.jpg'
             rating={5}
-          />
+          /> */}
         </div>
       </div>
     </div>
