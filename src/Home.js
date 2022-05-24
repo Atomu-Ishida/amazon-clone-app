@@ -4,7 +4,6 @@ import './Home.css';
 import Product from './Product';
 
 const Home = () => {
-  const number = [1, 2];
   return (
     <div className='home'>
       <div className='home__container'>
@@ -15,25 +14,21 @@ const Home = () => {
         />
 
         <div className='home__row'>
-          {number.map((d) => (
-            <Product
-              key={d}
-              id='12413121'
-              title='The lean startup'
-              price={29.99}
-              image='https://images-na.ssl-images-amazon.com/images/I/51Zymoq7UnL._AC_SY400_.jpg'
-              rating={5}
-            />
-          ))}
-
-          {/* <Product
-            key={2}
-            id={Math.random()}
+          <Product
+            id='12413121'
             title='The lean startup'
             price={29.99}
             image='https://images-na.ssl-images-amazon.com/images/I/51Zymoq7UnL._AC_SY400_.jpg'
+            rating={5}
+          />
+
+          <Product
+            id={Math.random()}
+            title='The lean startup2'
+            price={12.22}
+            image='https://images-na.ssl-images-amazon.com/images/I/51Zymoq7UnL._AC_SY400_.jpg'
             rating={4}
-          /> */}
+          />
         </div>
         <div className='home__row'>
           {/* <Product
