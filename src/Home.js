@@ -59,6 +59,7 @@ const Home = () => {
           {products.map((product) => {
             return (
               <Product
+                key={product.id}
                 id={product.id}
                 title={product.title}
                 price={product.price}
