@@ -1,17 +1,27 @@
 import React, { useState } from 'react';
-import { Link } from '@material-ui/core';
+import { Link, useNavigate, Navigate } from 'react-router-dom';
 import './Login.css';
+import { auth } from './firebase';
 
 const Login = () => {
+  const navigate = useNavigate();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
   const signIn = (e) => {
     e.preventDefault();
+    auth.signInWithEmailAndPassword(email, password).then((auth) => {
+      navigate('/');
+    });
   };
 
   const register = (e) => {
     e.preventDefault();
+    auth.createUserWithEmailAndPassword(email, password).then((auth) => {
+      if (auth) {
+        navigate('/');
+      }
+    });
   };
 
   return (
