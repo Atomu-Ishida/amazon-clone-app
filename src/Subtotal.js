@@ -29,7 +29,7 @@ const Subtotal = () => {
         prefix={'$'}
       />
 
-      <button onClick={() => navigate('/orders', { replace: true })}>
+      <button onClick={() => navigate('/payment', { replace: true })}>
         Proceed to Checkout
       </button>
     </div>
