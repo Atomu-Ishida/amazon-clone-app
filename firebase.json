@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 {
   "hosting": {
     "public": "build",
@@ -14,3 +15,6 @@
     ]
   }
 }
+=======
+{}
+>>>>>>> 820c9aed34fb0cb1457161e57a9efbcf641f19be
