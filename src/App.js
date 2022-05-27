@@ -6,6 +6,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Checkout from './Checkout';
 import Login from './Login';
 import Payment from './Payment';
+import Orders from './Orders';
 import { auth } from './firebase';
 import { useStateValue } from './StateProvider';
 import { loadStripe } from '@stripe/stripe-js';
@@ -48,6 +49,7 @@ function App() {
               </Elements>,
             ]}
           />
+          <Route path='/orders' element={[<Header />, <Orders />]} />
         </Routes>
       </div>
     </Router>
