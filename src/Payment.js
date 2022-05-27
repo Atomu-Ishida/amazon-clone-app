@@ -8,6 +8,7 @@ import { Link } from 'react-router-dom';
 import { CardElement, useStripe, useElements } from '@stripe/react-stripe-js';
 import CurrencyFormat from 'react-currency-format';
 import { getBasketTotal } from './reducer';
+import { db } from './firebase';
 
 const Payment = () => {
   const navigate = useNavigate();
@@ -49,13 +50,27 @@ const Payment = () => {
         },
       })
       .then(({ paymentIntent }) => {
+        db.collection('users')
+          .doc(user?.uid)
+          .collection('orders')
+          .doc(paymentIntent.id)
+          .set({
+            basket: basket,
+            amount: paymentIntent.amount,
+            created: paymentIntent.created,
+          });
+
         setSucceeded(true);
         setError(null);
         setProcessing(false);
 
-        console.log('成功！');
+        dispatch({
+          type: 'EMPTY_BASKET',
+        });
 
-        navigate('/', { replace: true });
+        console.log('成功');
+
+        navigate('/orders', { replace: true });
       });
   };
 

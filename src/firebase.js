@@ -5,6 +5,7 @@ import 'firebase/compat/firestore';
 const firebaseConfig = {
   apiKey: 'AIzaSyDt2NMBzZX656fjWVl0pr8-7_f4A48a30A',
   authDomain: 'clone-7bfe5.firebaseapp.com',
+  databaseURL: 'https://clone-7bfe5-default-rtdb.firebaseio.com/',
   projectId: 'clone-7bfe5',
   storageBucket: 'clone-7bfe5.appspot.com',
   messagingSenderId: '378995737733',
@@ -13,6 +14,7 @@ const firebaseConfig = {
 
 const firebaseApp = firebase.initializeApp(firebaseConfig);
 
+const db = firebaseApp.firestore();
 const auth = firebase.auth();
 
-export { auth };
+export { db, auth };
