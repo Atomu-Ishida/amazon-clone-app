@@ -5,26 +5,33 @@ const stripe = require('stripe')(
   'sk_test_51L3gMDD0YuBIjFfoZ1xZzWNULGFiA5UPACLaZdxpEK68n1tKV5XqtZZJ2umjSjJCFS84tjFr3EJYCOEscVCkZUS900r3VjsWxr'
 );
 
+// API
+
+// - App config
 const app = express();
 
+// - Middlewares
 app.use(cors({ origin: true }));
 app.use(express.json());
 
-app.get('/', (request, response) => response.status(200).send('hello world!'));
+// - API routes
+app.get('/', (request, response) => response.status(200).send('hello world'));
 
 app.post('/payments/create', async (request, response) => {
   const total = request.query.total;
 
-  console.log('total is', total);
+  console.log('Payment Request Recieved BOOM!!! for this amount >>> ', total);
 
   const paymentIntent = await stripe.paymentIntents.create({
-    amount: total,
+    amount: total, // subunits of the currency
     currency: 'usd',
   });
 
+  // OK - Created
   response.status(201).send({
     clientSecret: paymentIntent.client_secret,
   });
 });
 
+// - Listen command
 exports.api = functions.https.onRequest(app);

@@ -33,11 +33,11 @@ const Payment = () => {
       });
       setClientSecret(response.data.clientSecret);
     };
-
     getClientSecret();
   }, [basket]);
 
   console.log('secret is', clientSecret);
+  console.log(user.email);
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -117,12 +117,11 @@ const Payment = () => {
               <CardElement onChange={handleChange} />
               <div className='payment__priceContainer'>
                 <CurrencyFormat
-                  renderText={(value) => <h3>合計額 {value}</h3>}
+                  renderText={(value) => <h3>合計額 {value}円</h3>}
                   decimalScale={2}
                   value={getBasketTotal(basket)}
                   displayType={'text'}
                   thousandSeparator={true}
-                  prefix={'円'}
                 />
                 <button disabled={processing || disabled || succeeded}>
                   <span>{processing ? <p>お支払い中</p> : '今すぐ買う！'}</span>
