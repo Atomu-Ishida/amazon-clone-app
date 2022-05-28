@@ -83,16 +83,16 @@ const Payment = () => {
     <div className='payment'>
       <div className='payment_container'>
         <h1>
-          Checkout (<Link to='/checkout'>{basket?.length} items</Link>)
+          お会計に進む (<Link to='/checkout'>{basket?.length} 品</Link>)
         </h1>
         <div className='payment__section'>
           <div className='payment__title'>
-            <h3>Delivery Address</h3>
+            <h3>お届け先の住所</h3>
           </div>
           <div className='payment__address'>
             <p>{user?.email}</p>
-            <p>123 React Lane</p>
-            <p>Los Angeles, CA</p>
+            <p>日本</p>
+            <p>静岡県</p>
           </div>
         </div>
         <div className='payment__section'>
@@ -110,22 +110,22 @@ const Payment = () => {
         </div>
         <div className='payment__section'>
           <div className='payment__title'>
-            <h3>Payment Method</h3>
+            <h3>お支払い</h3>
           </div>
           <div className='payment__details'>
             <form onSubmit={handleSubmit}>
               <CardElement onChange={handleChange} />
               <div className='payment__priceContainer'>
                 <CurrencyFormat
-                  renderText={(value) => <h3>Order Total: {value}</h3>}
+                  renderText={(value) => <h3>合計額 {value}</h3>}
                   decimalScale={2}
                   value={getBasketTotal(basket)}
                   displayType={'text'}
                   thousandSeparator={true}
-                  prefix={'$'}
+                  prefix={'円'}
                 />
                 <button disabled={processing || disabled || succeeded}>
-                  <span>{processing ? <p>Processing</p> : 'Buy Now'}</span>
+                  <span>{processing ? <p>お支払い中</p> : '今すぐ買う！'}</span>
                 </button>
               </div>
 

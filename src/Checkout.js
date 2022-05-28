@@ -20,7 +20,7 @@ const Checkout = () => {
         </Link>
         <div>
           <h3>{user?.email}</h3>
-          <h2 className='checkout__title'>Your Shopping Basket</h2>
+          <h2 className='checkout__title'>カートの中身</h2>
           {basket.map((item) => (
             <CheckoutProduct
               id={item.id}

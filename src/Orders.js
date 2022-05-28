@@ -28,7 +28,7 @@ const Orders = () => {
   }, [user]);
   return (
     <div className='orders'>
-      <h1>Your Orders</h1>
+      <h1>注文品</h1>
 
       <div>
         {orders?.map((order) => (

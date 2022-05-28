@@ -33,25 +33,20 @@ const Header = () => {
         <Link to={!user && '/login'}>
           <div className='header__option' onClick={handleAuthentication}>
             <span className='header__optionLineOne'>
-              Hello! {!user ? 'Guest' : user.email}
+              こんにちは！{!user ? 'ゲスト' : user.email}
             </span>
             <span className='header__optionLineTwo'>
-              {user ? 'Sign Out' : 'Sign In'}
+              {user ? 'サインアウト' : 'サインイン'}
             </span>
           </div>
         </Link>
 
         <Link to='/orders'>
           <div className='header__option'>
-            <span className='header__optionLineOne'>Returns</span>
-            <span className='header__optionLineTwo'>& Orders</span>
+            <span className='header__optionLineOne'>返品</span>
+            <span className='header__optionLineTwo'>& カート</span>
           </div>
         </Link>
-
-        <div className='header__option'>
-          <span className='header__optionLineOne'>Your</span>
-          <span className='header__optionLineTwo'>Prime</span>
-        </div>
 
         <div className='header__optionBasket'>
           <Link to='/checkout'>

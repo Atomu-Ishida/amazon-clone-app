@@ -34,30 +34,29 @@ const Login = () => {
       </Link>
 
       <div className='login__container'>
-        <h1>Sign-in</h1>
+        <h1>サインイン</h1>
         <form>
-          <h5>E-mail</h5>
+          <h5>Eメール</h5>
           <input
             type='text'
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           />
-          <h5>Password</h5>
+          <h5>パスワード</h5>
           <input
             type='password'
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
           <button className='login__signInButton' onClick={signIn}>
-            Sign In
+            サインイン
           </button>
         </form>
         <p>
-          By signing-in you agree to the AMAZON FAKE CLONE Conditions of Use &
-          Sale.
+          「注文を確定する」ボタンを押してご注文いただくことで、お客様は当サイトの各種規約、プライバシー規約および当サイト上の販売条件に同意の上、商品をご注文されたことになります。
         </p>
         <button className='login__registerButton' onClick={register}>
-          Create your Amazon Account
+          アマゾンアカウントを作成する
         </button>
       </div>
     </div>

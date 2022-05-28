@@ -14,11 +14,12 @@ const Subtotal = () => {
         renderText={(value) => (
           <>
             <p>
-              Subtotal ({basket.length} items): <strong>{value}</strong>
+              品数 ({basket.length} 品): <strong>{value}</strong>
+              <small>円</small>
             </p>
             <small className='subtotal__gift'>
               <input type='checkbox' />
-              This order contains a gift
+              ギフトを含む
             </small>
           </>
         )}
@@ -26,11 +27,10 @@ const Subtotal = () => {
         value={getBasketTotal(basket)}
         displayType={'text'}
         thousandSeparator={true}
-        prefix={'$'}
       />
 
       <button onClick={() => navigate('/payment', { replace: true })}>
-        Proceed to Checkout
+        お会計に進む
       </button>
     </div>
   );
