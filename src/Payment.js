@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import axios from './axios';
-import { useNavigate } from 'react-router-dom';
 import './Payment.css';
 import CheckoutProduct from './CheckoutProduct';
 import { useStateValue } from './StateProvider';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { CardElement, useStripe, useElements } from '@stripe/react-stripe-js';
 import CurrencyFormat from 'react-currency-format';
 import { getBasketTotal } from './reducer';
@@ -19,9 +18,8 @@ const Payment = () => {
 
   const [succeeded, setSucceeded] = useState(false);
   const [processing, setProcessing] = useState('');
-
   const [error, setError] = useState(null);
-  const [disabled, setDisabled] = useState(null);
+  const [disabled, setDisabled] = useState(true);
   const [clientSecret, setClientSecret] = useState(true);
   // const stringClientSecret = clientSecret.toString();
 

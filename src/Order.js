@@ -23,12 +23,13 @@ function Order({ order }) {
         />
       ))}
       <CurrencyFormat
-        renderText={(value) => <h3 className='order__total'>合計額 {value}</h3>}
+        renderText={(value) => (
+          <h3 className='order__total'>合計額 {value}円</h3>
+        )}
         decimalScale={2}
         value={order.data.amount / 100}
         displayType={'text'}
         thousandSeparator={true}
-        prefix={'円'}
       />
     </div>
   );
